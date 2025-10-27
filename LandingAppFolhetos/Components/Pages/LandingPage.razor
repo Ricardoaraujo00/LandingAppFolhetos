@@ -1,0 +1,57 @@
+﻿@page "/"
+@using LandingAppFolhetos.Components.Layout
+@layout EmptyLayout
+@inject NavigationManager NavigationManager
+@inject LandingAppFolhetos.Data.ApplicationDbContext Db
+@using LandingAppFolhetos.Shared
+
+<LandingPageContent></LandingPageContent>
+
+@code {
+    private string? local;
+    private string? distribuidor;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+        var query = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
+
+        if (query.TryGetValue("idLocal", out var idLocal) &&
+            query.TryGetValue("IdDistribuidor", out var idDistribuidor))
+        {
+            local = idLocal.FirstOrDefault();
+            distribuidor = idDistribuidor.FirstOrDefault();
+
+            if (!string.IsNullOrEmpty(local) && !string.IsNullOrEmpty(distribuidor))
+            {
+                int idLocalInt = int.Parse(local);
+
+                // Procura registo existente
+                var registo = Db.RegistoLeituraFolhetos
+                    .FirstOrDefault(r => r.IdLocal == idLocalInt && r.IdUtilizador == distribuidor);
+
+                if (registo != null)
+                {
+                    registo.Leituras += 1;
+                    Db.RegistoLeituraFolhetos.Update(registo);
+                }
+                else
+                {
+                    registo = new RegistoLeituraFolheto
+                    {
+                        IdLocal = idLocalInt,
+                        IdUtilizador = distribuidor,
+                        Leituras = 1
+                    };
+                    Db.RegistoLeituraFolhetos.Add(registo);
+                }
+
+                await Db.SaveChangesAsync();
+
+                // Limpa a URL (remove os parâmetros)
+                NavigationManager.NavigateTo("/", replace: true);
+            }
+        }
+    }
+}
+

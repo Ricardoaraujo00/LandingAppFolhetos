@@ -21,6 +21,12 @@ builder.Services.AddAuthentication(options =>
         options.DefaultScheme = IdentityConstants.ApplicationScheme;
         options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
     })
+    .AddGoogle(googleOptions =>
+    {
+        googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? throw new InvalidOperationException("Configuração 'Authentication:Google:ClientId' não encontrada.");
+        googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? throw new InvalidOperationException("Configuração 'Authentication:Google:ClientSecret' não encontrada.");
+        googleOptions.CallbackPath = "/signin-google";
+    })
     .AddIdentityCookies();
 builder.Services.AddAuthorization();
 

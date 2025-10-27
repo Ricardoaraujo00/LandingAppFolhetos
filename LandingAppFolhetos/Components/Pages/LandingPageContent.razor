@@ -1,0 +1,301 @@
+﻿@inject IJSRuntime JS
+
+<!-- Main Landing Page -->
+<div id="mainPage">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Junte-se à Mudança<br>Pedro Tinoco de Faria<br>Presidente 2026</h1>
+                <p class="subtitle">Pela soberania nacional e por um Portugal onde a voz do povo é a prioridade</p>
+                <a href="#" class="cta-primary" onclick="trackClick('main_cta_campaign')">Conheça a Campanha</a>
+                <a href="#about" class="cta-secondary">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Quem é Pedro Tinoco de Faria?</h2>
+                
+            <div class="about-content">
+                <div class="candidate-photo">
+                    <div class="photo-placeholder">
+                        FOTO<br>PEDRO TINOCO<br>DE FARIA
+                    </div>
+                </div>
+                    
+                <div>
+                    <ul class="bio-points">
+                        <li><strong>25 anos de serviço militar</strong> no Regimento de Comandos e Tropas Paraquedistas</li>
+                        <li><strong>Veterano internacional:</strong> missões na Bósnia, Afeganistão e Timor Leste</li>
+                        <li><strong>Filho de militar e professora</strong> - uma família de serviço a Portugal</li>
+                        <li><strong>Pai de três filhos</strong> independentes</li>
+                        <li><strong>Candidato independente</strong> sem filiação política</li>
+                        <li><strong>Vive no Portugal rural</strong> - conhece a realidade do país</li>
+                    </ul>
+                </div>
+            </div>
+                
+            <div class="mission-statement">
+                "Não sou de esquerda nem de direita. Sou das pessoas. O presidente deve ser uma voz extra partidária, defendendo os interesses dos jovens, dos idosos, dos portugueses."
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2 class="section-title">A Nossa Visão em Vídeo</h2>
+                
+            <div class="videos-grid">
+                <div class="video-card" onclick="openVideo('video1')">
+                    <div class="video-thumbnail">
+                        📹
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Apresentação da Candidatura</h4>
+                        <p>Pedro Tinoco de Faria apresenta-se ao país e explica os motivos da sua candidatura à Presidência da República.</p>
+                    </div>
+                </div>
+                    
+                <div class="video-card" onclick="openVideo('video2')">
+                    <div class="video-thumbnail">
+                        🎖️
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>A Experiência Militar</h4>
+                        <p>25 anos ao serviço de Portugal: do Regimento de Comandos às missões internacionais.</p>
+                    </div>
+                </div>
+                    
+                <div class="video-card" onclick="openVideo('video3')">
+                    <div class="video-thumbnail">
+                        🇵🇹
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Soberania Nacional</h4>
+                        <p>A visão de Pedro Tinoco sobre a independência de Portugal face às pressões externas.</p>
+                    </div>
+                </div>
+                    
+                <div class="video-card" onclick="openVideo('video4')">
+                    <div class="video-thumbnail">
+                        ⚖️
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Segurança e Justiça</h4>
+                        <p>Propostas para reformar o sistema judicial e garantir mais segurança aos portugueses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Campanha 2026</h4>
+                    <p>Candidatura Independente</p>
+                    <p>Movimento Gente</p>
+                    <p>Recolha de Assinaturas</p>
+                </div>
+                    
+                <div class="footer-section">
+                    <h4>Contactos</h4>
+                    <p>Email: info@pedropresidente.pt</p>
+                    <p>Website: pedropresidente.pt</p>
+                    <p>URL: pedropresidente.pt/folheto</p>
+                </div>
+                    
+                <div class="footer-section">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" onclick="trackClick('social_facebook')">f</a>
+                        <a href="#" class="social-link" onclick="trackClick('social_twitter')">𝕏</a>
+                        <a href="#" class="social-link" onclick="trackClick('social_instagram')">📷</a>
+                        <a href="#" class="social-link" onclick="trackClick('social_youtube')">▶</a>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pedro Tinoco de Faria - Todos os direitos reservados</p>
+                <p>Política de Privacidade | <a href="#">Termos de Uso</a></p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Video Pages (Hidden by default) -->
+<div id="video1" class="video-page">
+    <div class="container">
+        <button class="back-btn" onclick="goBack()">← Voltar aos Vídeos</button>
+            
+        <div class="video-container">
+            <div class="video-embed">
+                [VÍDEO: Apresentação da Candidatura]<br>
+                <small>Incorporar aqui o vídeo do YouTube/Vimeo</small>
+            </div>
+        </div>
+            
+        <div class="video-content">
+            <h2>Apresentação da Candidatura</h2>
+            <div class="video-summary">
+                <p><strong>Pedro Tinoco de Faria apresenta-se</strong> ao país como candidato independente à Presidência da República para as eleições de 2026.</p>
+                    
+                <p>Neste vídeo, Pedro explica a <strong>motivação pessoal</strong> da sua candidatura, baseada na sua história como órfão de guerra e na convicção de que o sacrifício do seu pai não pode ter sido em vão.</p>
+                    
+                <p>Como <strong>militar com 25 anos de serviço</strong>, Pedro serviu Portugal em missões internacionais e conhece o verdadeiro significado de servir a pátria com humildade e determinação.</p>
+                    
+                <p><strong>Principais pontos abordados:</strong></p>
+                <ul>
+                    <li>História pessoal e motivação para candidatar-se</li>
+                    <li>Experiência militar e internacional</li>
+                    <li>Visão de um presidente independente dos partidos</li>
+                    <li>Compromisso com a soberania nacional</li>
+                </ul>
+            </div>
+                
+            <div class="share-buttons">
+                <a href="#" class="share-btn share-facebook" onclick="shareVideo('facebook', 'video1')">Partilhar no Facebook</a>
+                <a href="#" class="share-btn share-twitter" onclick="shareVideo('twitter', 'video1')">Partilhar no X</a>
+                <a href="#" class="share-btn share-whatsapp" onclick="shareVideo('whatsapp', 'video1')">Partilhar no WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="video2" class="video-page">
+    <div class="container">
+        <button class="back-btn" onclick="goBack()">← Voltar aos Vídeos</button>
+            
+        <div class="video-container">
+            <div class="video-embed">
+                [VÍDEO: A Experiência Militar]<br>
+                <small>Incorporar aqui o vídeo do YouTube/Vimeo</small>
+            </div>
+        </div>
+            
+        <div class="video-content">
+            <h2>A Experiência Militar</h2>
+            <div class="video-summary">
+                <p><strong>25 anos ao serviço de Portugal</strong> - Pedro Tinoco de Faria partilha a sua experiência militar desde o ingresso na Academia Militar em 1982.</p>
+                    
+                <p>Do <strong>Regimento de Comandos</strong> às Tropas Paraquedistas, Pedro serviu com distinção em múltiplas missões internacionais, sempre colocando o serviço aos soldados e à pátria acima de tudo.</p>
+                    
+                <p><strong>Missões internacionais:</strong></p>
+                <ul>
+                    <li><strong>Bósnia:</strong> Missão de paz dos Balcãs</li>
+                    <li><strong>Afeganistão:</strong> Operações de estabilização</li>
+                    <li><strong>Timor Leste:</strong> Apoio à independência</li>
+                </ul>
+                    
+                <p>Esta experiência formou a sua <strong>visão de liderança</strong> baseada no mérito, na competência e no verdadeiro serviço ao interesse nacional.</p>
+            </div>
+                
+            <div class="share-buttons">
+                <a href="#" class="share-btn share-facebook" onclick="shareVideo('facebook', 'video2')">Partilhar no Facebook</a>
+                <a href="#" class="share-btn share-twitter" onclick="shareVideo('twitter', 'video2')">Partilhar no X</a>
+                <a href="#" class="share-btn share-whatsapp" onclick="shareVideo('whatsapp', 'video2')">Partilhar no WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="video3" class="video-page">
+    <div class="container">
+        <button class="back-btn" onclick="goBack()">← Voltar aos Vídeos</button>
+            
+        <div class="video-container">
+            <div class="video-embed">
+                [VÍDEO: Soberania Nacional]<br>
+                <small>Incorporar aqui o vídeo do YouTube/Vimeo</small>
+            </div>
+        </div>
+            
+        <div class="video-content">
+            <h2>Soberania Nacional</h2>
+            <div class="video-summary">
+                <p>Pedro Tinoco de Faria expõe a sua visão sobre <strong>soberania nacional</strong> e a necessidade de Portugal manter a sua independência face às pressões externas.</p>
+                    
+                <p><strong>Defesa intransigente</strong> da soberania portuguesa e da identidade nacional, resistindo às pressões europeístas federalistas que comprometem a nossa autonomia.</p>
+                    
+                <p><strong>Principais posições:</strong></p>
+                <ul>
+                    <li>Resistência ao federalismo europeu</li>
+                    <li>Defesa da identidade portuguesa</li>
+                    <li>Neutralidade em conflitos externos</li>
+                    <li>Decisões nacionais tomadas pelos portugueses</li>
+                </ul>
+                    
+                <p>Como presidente, Pedro defende que <strong>as decisões sobre Portugal devem ser tomadas pelos portugueses</strong>, não por pressões ou interesses externos.</p>
+            </div>
+                
+            <div class="share-buttons">
+                <a href="#" class="share-btn share-facebook" onclick="shareVideo('facebook', 'video3')">Partilhar no Facebook</a>
+                <a href="#" class="share-btn share-twitter" onclick="shareVideo('twitter', 'video3')">Partilhar no X</a>
+                <a href="#" class="share-btn share-whatsapp" onclick="shareVideo('whatsapp', 'video3')">Partilhar no WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="video4" class="video-page">
+    <div class="container">
+        <button class="back-btn" onclick="goBack()">← Voltar aos Vídeos</button>
+            
+        <div class="video-container">
+            <div class="video-embed">
+                [VÍDEO: Segurança e Justiça]<br>
+                <small>Incorporar aqui o vídeo do YouTube/Vimeo</small>
+            </div>
+        </div>
+            
+        <div class="video-content">
+            <h2>Segurança e Justiça</h2>
+            <div class="video-summary">
+                <p>Pedro Tinoco apresenta as suas <strong>propostas revolucionárias</strong> para reformar o sistema judicial português e garantir mais segurança aos cidadãos.</p>
+                    
+                <p><strong>Medidas concretas</strong> para combater a criminalidade e reformar um sistema judicial que falhou ao longo de décadas.</p>
+                    
+                <p><strong>Propostas principais:</strong></p>
+                <ul>
+                    <li><strong>Prisão perpétua</strong> para crimes graves</li>
+                    <li><strong>Trabalhos forçados</strong> para reclusos</li>
+                    <li><strong>Nomeações por mérito</strong> nas polícias</li>
+                    <li><strong>Magistratura competente</strong> baseada no mérito</li>
+                </ul>
+                    
+                <p>Pedro defende que <strong>são os cidadãos que pagam</strong> a manutenção dos reclusos, pelo que estes devem contribuir através do trabalho para a sociedade.</p>
+            </div>
+                
+            <div class="share-buttons">
+                <a href="#" class="share-btn share-facebook" onclick="shareVideo('facebook', 'video4')">Partilhar no Facebook</a>
+                <a href="#" class="share-btn share-twitter" onclick="shareVideo('twitter', 'video4')">Partilhar no X</a>
+                <a href="#" class="share-btn share-whatsapp" onclick="shareVideo('whatsapp', 'video4')">Partilhar no WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+@* 
+@code {
+    private bool _urlLimpa = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!_urlLimpa)
+        {
+            _urlLimpa = true;
+            // Limpa a query string da URL sem recarregar a página
+            await JS.InvokeVoidAsync("window.history.replaceState", null, "", "/");
+        }
+    }
+} *@
